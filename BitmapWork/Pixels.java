@@ -123,3 +123,7 @@ public void drawStrokeRect(int x, int y, int w, int h, int r, int g, int b) {
 	}
 
 }
+
+public int getCoord(int x,int y) {
+		return tableY[y]+x;
+	}
