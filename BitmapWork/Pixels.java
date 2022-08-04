@@ -85,4 +85,33 @@ public Bitmap(int width, int height) {
 		return this.bublik;
 		
 	}
+
+public void line(int ax1,int ay1, int ax2, int ay2, int r,int  g,int b) {
+		if(ay1==ay2) {//horizontal
+			if ((ay1 < 0) || (ay1 >= height)) { return; }
+			if (ax1>ax2) { int temp = ax1; ax1 = ax2; ax2 = temp; }
+			if ((ax2 < 0) || (ax1 >= width)){ return; }
+			if (ax1 < 0){ ax1 = 0; }
+			if (ax2 >= width){ ax2 = width - 1; }
+
+			int coord = ax1;
+			for (int temp = 0; temp <=(ax2 - ax1); temp++, coord ++){
+				setPix(coord,ay1,r,g,b);
+			} //for temp 
+		}//if ay1=ay2
+		else
+		if(ax1==ax2) {//vertical
+			if ((ax1 < 0) || (ax1 >= width)) { return; }
+			if (ay1>ay2){ int temp = ay1; ay1 = ay2; ay2 = temp; }
+			if ((ay2 < 0) || (ay1 >= height)){ return; }
+			if (ay1 < 0){ ay1 = 0; }
+			if (ay2 >= height){ ay2 = height - 1; }
+
+			int coord = ay1;
+			for (int temp = 0; temp <= (ay2 - ay1); temp++, coord++){
+				setPix(ax1,coord,r,g,b);
+
+			}//for temp
+		}//vertical
+	}
 }
