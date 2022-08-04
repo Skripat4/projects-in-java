@@ -114,4 +114,12 @@ public void line(int ax1,int ay1, int ax2, int ay2, int r,int  g,int b) {
 			}//for temp
 		}//vertical
 	}
+
+public void drawStrokeRect(int x, int y, int w, int h, int r, int g, int b) {
+		line(x,y,x+w,y,r,g,b);
+		line(x,y+h,x+w,y+h,r,g,b);
+		line(x,y,x,y+h,r,g,b);
+		line(x+w,y,x+w,y+h,r,g,b);
+	}
+
 }
